@@ -3,6 +3,7 @@ const dotenv = require('dotenv').config()
 const colors = require('colors')
 import connectDB from './config/db'
 import quizRouter from './routes/quizRoutes'
+import announcementRouter from './routes/announcementRoutes'
 const { errorHandler } = require('./middlewares/errorMiddleware')
 
 const PORT = process.env.PORT || 8888
@@ -20,7 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/api/quizzes', quizRouter)
 
 // Announcement Routes
-// app.use('/api/Announcement', require('./routes/announcementRoutes'))
+app.use('/api/Announcements', announcementRouter)
 
 // error handler middleware
 app.use(errorHandler)

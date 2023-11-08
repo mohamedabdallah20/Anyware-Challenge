@@ -1,12 +1,12 @@
 import { Schema, model, Document } from 'mongoose'
 
 // Define an announcement schema
-const announcementSchema = new Schema({
+const announcementSchema = new Schema<AnnouncementDocument>({
   title: {
     type: String,
     required: true,
   },
-  userName: {
+  name: {
     type: String,
     required: true,
   },
@@ -21,7 +21,7 @@ const announcementSchema = new Schema({
 })
 
 // Define an Announcement document interface
-interface AnnouncementDocument extends Document {
+export interface AnnouncementDocument extends Document {
   title: string
   name: string
   content: string

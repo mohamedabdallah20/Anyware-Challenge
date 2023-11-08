@@ -9,7 +9,7 @@ export const createQuiz = async (req: Request, res: Response) => {
     const savedQuiz = await newQuiz.save()
     res.status(201).json(savedQuiz)
   } catch (error: Error | any) {
-    res.status(400).json({ error: error.message })
+    res.status(400)
     throw new Error(error.message)
   }
 }
@@ -20,7 +20,7 @@ export const getAllQuizzes = async (req: Request, res: Response) => {
     const quizzes: QuizDocument[] = await QuizModel.find()
     res.status(200).json(quizzes)
   } catch (error: Error | any) {
-    res.status(500).json({ error: error.message })
+    res.status(500)
     throw new Error(error.message)
   }
 }
@@ -35,7 +35,7 @@ export const getQuizById = async (req: Request, res: Response) => {
     }
     res.status(200).json(quiz)
   } catch (error: Error | any) {
-    res.status(500).json({ error: error.message })
+    res.status(500)
     throw new Error(error.message)
   }
 }
@@ -43,11 +43,9 @@ export const getQuizById = async (req: Request, res: Response) => {
 // Update a quiz by ID
 export const updateQuiz = async (req: Request, res: Response) => {
   try {
-    const { title, course, topic, dueTo, questions } = req.body
     const updatedQuiz: QuizDocument | null = await QuizModel.findByIdAndUpdate(
       req.params.id,
-      { title, course, topic, dueTo, questions },
-      { new: true }
+      req.body
     )
     if (!updatedQuiz) {
       res.status(404).json({ error: 'Quiz not found' })
@@ -55,7 +53,7 @@ export const updateQuiz = async (req: Request, res: Response) => {
     }
     res.status(200).json(updatedQuiz)
   } catch (error: Error | any) {
-    res.status(500).json({ error: error.message })
+    res.status(500)
     throw new Error(error.message)
   }
 }
@@ -72,7 +70,7 @@ export const deleteQuiz = async (req: Request, res: Response) => {
     }
     res.status(204).end()
   } catch (error: Error | any) {
-    res.status(500).json({ error: error.message })
+    res.status(500)
     throw new Error(error.message)
   }
 }
