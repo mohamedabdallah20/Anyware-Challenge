@@ -11,18 +11,18 @@ import {
 const quizRouter = express.Router()
 
 // Create a new quiz
-quizRouter.post('/quizzes', asyncHandler(createQuiz))
+quizRouter.post('/', asyncHandler(createQuiz))
 
 // Get all quizzes
-quizRouter.get('/quizzes', asyncHandler(getAllQuizzes))
+quizRouter.get('/', asyncHandler(getAllQuizzes))
 
 // Get a specific quiz by ID
-quizRouter.get('/quizzes/:id', asyncHandler(getQuizById))
+quizRouter.get('/:id', asyncHandler(getQuizById))
 
 // Update a quiz by ID
-quizRouter.put('/quizzes/:id', asyncHandler(updateQuiz))
+quizRouter.put('/:id', asyncHandler(updateQuiz))
 
 // Delete a quiz by ID
-quizRouter.delete('/quizzes/:id', asyncHandler(deleteQuiz))
+quizRouter.delete('/:id', asyncHandler(deleteQuiz))
 
 export default quizRouter
