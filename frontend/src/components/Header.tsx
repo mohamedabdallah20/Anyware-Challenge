@@ -5,7 +5,7 @@ import { RxAvatar } from 'react-icons/rx'
 
 export default function Header() {
   return (
-    <nav className="rounded-3xl bg-white p-4 h-40">
+    <nav className="rounded-s-md bg-white p-4 h-40">
       <div className=" grid md:grid-cols-2 place-items-center h-full mx-auto">
         <div className="flex-grow  ">
           <div className="text-slate-600 md:text-5xl text-2xl font-bold mx-auto">

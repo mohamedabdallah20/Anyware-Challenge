@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { Provider } from 'react-redux'
+import { store } from './app/store'
 // import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 // const theme = createTheme()
@@ -15,7 +17,9 @@ root.render(
   //   {/* </React.StrictMode> */}
   // </ThemeProvider>
 
-  <App />
+  <Provider store={store}>
+    <App />
+  </Provider>
 )
 
 // If you want to start measuring performance in your app, pass a function

@@ -6,7 +6,7 @@ const announcementSchema = new Schema<AnnouncementDocument>({
     type: String,
     required: true,
   },
-  name: {
+  userName: {
     type: String,
     required: true,
   },
@@ -23,7 +23,7 @@ const announcementSchema = new Schema<AnnouncementDocument>({
 // Define an Announcement document interface
 export interface AnnouncementDocument extends Document {
   title: string
-  name: string
+  userName: string
   content: string
   createdAt: Date
 }

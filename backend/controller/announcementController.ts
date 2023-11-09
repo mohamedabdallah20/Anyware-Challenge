@@ -6,7 +6,8 @@ import { Request, Response } from 'express'
 // Get all announcements
 export const getAllAnnouncements = async (req: Request, res: Response) => {
   try {
-    const announcements: AnnouncementDocument[] = await AnnouncementModel.find()
+    const announcements: AnnouncementDocument[] =
+      await AnnouncementModel.find().sort({ createdAt: 'asc' })
     res.status(200).json(announcements)
   } catch (error: Error | any) {
     res.status(500)
@@ -17,8 +18,8 @@ export const getAllAnnouncements = async (req: Request, res: Response) => {
 // Create a new announcement
 export const createAnnouncement = async (req: Request, res: Response) => {
   try {
-    const { title, name, content, createdAt } = req.body
-    const ann = new AnnouncementModel({ title, name, content, createdAt })
+    const { title, userName, content, createdAt } = req.body
+    const ann = new AnnouncementModel({ title, userName, content, createdAt })
     const savedAnn = await ann.save()
     res.status(201).json(savedAnn)
   } catch (error: Error | any) {

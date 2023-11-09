@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/api/quizzes', quizRouter)
 
 // Announcement Routes
-app.use('/api/Announcements', announcementRouter)
+app.use('/api/announcements', announcementRouter)
 
 // error handler middleware
 app.use(errorHandler)
