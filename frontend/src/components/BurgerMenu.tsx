@@ -18,12 +18,12 @@ function BurgerMenu() {
 
   return (
     <>
-      <div className="lg:w-64 bg-blue-500 lg:min-h-screen">
+      <div className="lg:w-96 bg-blue-500 lg:min-h-screen">
         <button onClick={toggleMenu} className="lg:hidden text-white p-4">
           <FaBars />
         </button>
         <div
-          className={`flex flex-col space-y-4 ${
+          className={`flex flex-col space-y-4 lg:pl-10 lg:space-y-14 ${
             isMenuOpen ? 'block' : 'hidden'
           }`}
         >
@@ -31,7 +31,7 @@ function BurgerMenu() {
             Coligo
           </div>
           <Link
-            to="/"
+            to="/dashboard"
             className="text-white p-4 flex items-center text-lg  hover:bg-white hover:text-blue-700  "
           >
             <FaHome size={30} className="mr-2" /> Dashboard
