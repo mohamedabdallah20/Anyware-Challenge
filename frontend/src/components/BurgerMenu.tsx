@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import {
   FaBars,
-  FaTachometerAlt,
+  FaHome,
   FaBook,
-  FaCalendar,
-  FaChartBar,
+  FaRegCalendarAlt,
+  FaChartLine,
   FaBullhorn,
-  FaClipboard,
+  FaGraduationCap,
 } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 function BurgerMenu() {
@@ -27,41 +27,45 @@ function BurgerMenu() {
             isMenuOpen ? 'block' : 'hidden'
           }`}
         >
+          <div className={'hidden lg:block text-5xl m-7 mb-20 font-bold '}>
+            Coligo
+          </div>
           <Link
             to="/"
-            className="text-white p-4 flex items-center hover:bg-white hover:text-blue-700  "
+            className="text-white p-4 flex items-center text-lg  hover:bg-white hover:text-blue-700  "
           >
-            <FaTachometerAlt className="mr-2" /> Dashboard
+            <FaHome size={30} className="mr-2" /> Dashboard
+          </Link>
+
+          <Link
+            to="/schedules"
+            className="text-white p-4 flex items-center text-lg hover:bg-white hover:text-blue-700 "
+          >
+            <FaRegCalendarAlt size={30} className="mr-2" /> Schedules
           </Link>
           <Link
             to="/courses"
-            className="text-white p-4 flex items-center hover:bg-white hover:text-blue-700 "
+            className="text-white p-4 flex items-center text-lg hover:bg-white hover:text-blue-700 "
           >
-            <FaBook className="mr-2" /> Courses
-          </Link>
-          <Link
-            to="/schedules"
-            className="text-white p-4 flex items-center hover:bg-white hover:text-blue-700 "
-          >
-            <FaCalendar className="mr-2" /> Schedules
-          </Link>
-          <Link
-            to="/performance"
-            className="text-white p-4 flex items-center hover:bg-white hover:text-blue-700 "
-          >
-            <FaChartBar className="mr-2" /> Performance
-          </Link>
-          <Link
-            to="/announcement"
-            className="text-white p-4 flex items-center hover:bg-white hover:text-blue-700 "
-          >
-            <FaBullhorn className="mr-2" /> Announcement
+            <FaBook size={30} className="mr-2" /> Courses
           </Link>
           <Link
             to="/gradebook"
-            className="text-white p-4 flex items-center hover:bg-white hover:text-blue-700 "
+            className="text-white p-4 flex items-center text-lg hover:bg-white hover:text-blue-700 "
           >
-            <FaClipboard className="mr-2" /> Gradebook
+            <FaGraduationCap size={30} className="mr-2" /> Gradebook
+          </Link>
+          <Link
+            to="/performance"
+            className="text-white p-4 flex items-center text-lg hover:bg-white hover:text-blue-700 "
+          >
+            <FaChartLine size={30} className="mr-2" /> Performance
+          </Link>
+          <Link
+            to="/announcement"
+            className="text-white p-4 flex items-center text-lg hover:bg-white hover:text-blue-700 "
+          >
+            <FaBullhorn size={30} className="mr-2" /> Announcement
           </Link>
         </div>
       </div>
