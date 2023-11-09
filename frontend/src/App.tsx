@@ -1,9 +1,24 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Dashboard from './pages/Dashboard'
+import BurgerMenu from './components/BurgerMenu'
 function App() {
-  return <div className="flex"></div>
+  return (
+    <>
+      <Router>
+        <div className="lg:flex">
+          <BurgerMenu />
+          <div className="w-full">
+            <Header />
+            <Routes>
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
+    </>
+  )
 }
 
 export default App
