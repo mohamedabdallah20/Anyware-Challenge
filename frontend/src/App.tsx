@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
 import BurgerMenu from './components/BurgerMenu'
-import withLogger from './hoc/withAuth'
+import requireAuth from './hoc/requireAuth'
 function App() {
   return (
     <>
@@ -19,5 +19,5 @@ function App() {
     </>
   )
 }
-const AuthApp = withLogger(App)
+const AuthApp = requireAuth(App)
 export default AuthApp

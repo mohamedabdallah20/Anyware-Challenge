@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const withLogger = <T extends object>(
+const requireAuth = <T extends object>(
   WrappedComponent: React.ComponentType<T>
 ) => {
   return function AuthComponent(props: T) {
@@ -18,4 +18,4 @@ const withLogger = <T extends object>(
   }
 }
 
-export default withLogger
+export default requireAuth
