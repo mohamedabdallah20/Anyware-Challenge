@@ -24,7 +24,10 @@ function QuizCard(props: props) {
       <div className="text-xl text-slate-600">Course : {quiz.course}</div>
       <div className="text-xl text-slate-600">Topic : {quiz.topic}</div>
       <div className="text-xl text-slate-600">Due To : {dueToDate}</div>
-      <Link to="/" className="btn btn-primary self-stretch w-full rounded-sm">
+      <Link
+        to={`/quizzes/${quiz._id}`}
+        className="btn btn-primary self-stretch w-full rounded-sm"
+      >
         Start Quiz
       </Link>
     </div>

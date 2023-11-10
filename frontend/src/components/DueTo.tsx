@@ -25,7 +25,7 @@ function DueTo(props: quizzesPropsType) {
           <h3 className="font-bold text-slate-600 text-3xl">Whats's Due</h3>
         </div>
         <div className="absolute top-4 right-4 ">
-          <Link to="/" className="text-primary-focus text-3xl">
+          <Link to="/quizzes" className="text-primary-focus text-3xl">
             All
           </Link>
         </div>

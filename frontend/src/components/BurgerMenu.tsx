@@ -62,7 +62,7 @@ function BurgerMenu() {
             <FaChartLine size={30} className="mr-2" /> Performance
           </Link>
           <Link
-            to="/announcement"
+            to="/announcements"
             className="text-white p-4 flex items-center text-lg hover:bg-white hover:text-blue-700 "
           >
             <FaBullhorn size={30} className="mr-2" /> Announcement

@@ -26,13 +26,13 @@ export default function Header() {
             </div>
             <div className="relative h-full  pt-4 md:pt-0 place-self-end md:place-self-start ">
               <div className="flex absolute -right-52 -top-2 space-x-4 ">
-                <Link to="/" className="text-slate-600">
+                <Link to="/notification" className="text-slate-600">
                   <FaBell className="text-3xl md:text-4xl" />
                 </Link>
-                <Link to="/" className="text-slate-600">
+                <Link to="/messages" className="text-slate-600">
                   <FaEnvelope className="text-3xl md:text-4xl" />
                 </Link>
-                <Link to="/" className="text-slate-600">
+                <Link to="/me" className="text-slate-600">
                   <RxAvatar className="text-3xl md:text-4xl" />
                 </Link>
               </div>

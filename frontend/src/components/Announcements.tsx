@@ -25,7 +25,7 @@ function Announcements(props: announcementsPropsType) {
           <h3 className="font-bold text-slate-600 text-3xl">Announcement</h3>
         </div>
         <div className="absolute top-4 right-4 ">
-          <Link to="/" className="text-primary-focus text-3xl">
+          <Link to="/announcements" className="text-primary-focus text-3xl">
             All
           </Link>
         </div>
