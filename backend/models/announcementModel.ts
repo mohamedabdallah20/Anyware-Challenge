@@ -14,6 +14,10 @@ const announcementSchema = new Schema<AnnouncementDocument>({
     type: String,
     required: true,
   },
+  course: {
+    type: String,
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
@@ -25,6 +29,7 @@ export interface AnnouncementDocument extends Document {
   title: string
   userName: string
   content: string
+  course: string
   createdAt: Date
 }
 

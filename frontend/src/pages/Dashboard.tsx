@@ -1,6 +1,5 @@
 import React from 'react'
 import ExamTime from '../components/ExamTime'
-import Announcement from '../components/Announcement'
 import DueTo from '../components/DueTo'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,15 +9,15 @@ import {
 } from '../features/announcements/announceSlice'
 import { AppDispatch } from '../app/store'
 import { RootState } from '../app/store'
+import Announcements from '../components/Announcements'
 
 export default function Dashboard() {
-  const { isLoading, isError, message, isSuccess, announcements } = useSelector(
-    (state: RootState) => state.announce
-  )
+  const AnnouncementData = useSelector((state: RootState) => state.announce)
   const dispatch: AppDispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getAllAnnouncements())
+
     return () => {
       dispatch(reset())
     }
@@ -27,7 +26,7 @@ export default function Dashboard() {
     <div className="flex flex-col justify-between space-y-10 text-5xl">
       <ExamTime />
       <div className="grid md:grid-cols-2">
-        <Announcement />
+        <Announcements data={AnnouncementData} />
         <DueTo />
       </div>
     </div>

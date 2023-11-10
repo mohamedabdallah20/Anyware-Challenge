@@ -18,8 +18,14 @@ export const getAllAnnouncements = async (req: Request, res: Response) => {
 // Create a new announcement
 export const createAnnouncement = async (req: Request, res: Response) => {
   try {
-    const { title, userName, content, createdAt } = req.body
-    const ann = new AnnouncementModel({ title, userName, content, createdAt })
+    const { title, userName, content, course, createdAt } = req.body
+    const ann = new AnnouncementModel({
+      title,
+      userName,
+      course,
+      content,
+      createdAt,
+    })
     const savedAnn = await ann.save()
     res.status(201).json(savedAnn)
   } catch (error: Error | any) {
