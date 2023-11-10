@@ -1,24 +1,23 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
 import BurgerMenu from './components/BurgerMenu'
+import withLogger from './hoc/withLogger'
 function App() {
   return (
     <>
-      <Router>
-        <div className="lg:flex">
-          <BurgerMenu />
-          <div className="w-full">
-            <Header />
-            <Routes>
-              <Route path="/dashboard" element={<Dashboard />} />
-            </Routes>
-          </div>
+      <div className="lg:flex">
+        <BurgerMenu />
+        <div className="w-full">
+          <Header />
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
         </div>
-      </Router>
+      </div>
     </>
   )
 }
-
-export default App
+const AuthApp = withLogger(App)
+export default AuthApp

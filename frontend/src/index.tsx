@@ -5,6 +5,9 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import AuthApp from './App'
+import Login from './pages/Login'
 // import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 // const theme = createTheme()
@@ -18,7 +21,12 @@ root.render(
   // </ThemeProvider>
 
   <Provider store={store}>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <AuthApp />
+    </Router>
   </Provider>
 )
 
