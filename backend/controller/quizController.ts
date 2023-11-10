@@ -4,8 +4,15 @@ import QuizModel, { QuizDocument } from '../models/quizModel'
 // Create a new quiz
 export const createQuiz = async (req: Request, res: Response) => {
   try {
-    const { title, course, topic, dueTo, questions } = req.body
-    const newQuiz = new QuizModel({ title, course, topic, dueTo, questions })
+    const { title, course, topic, dueTo, type, questions } = req.body
+    const newQuiz = new QuizModel({
+      title,
+      type,
+      course,
+      topic,
+      dueTo,
+      questions,
+    })
     const savedQuiz = await newQuiz.save()
     res.status(201).json(savedQuiz)
   } catch (error: Error | any) {

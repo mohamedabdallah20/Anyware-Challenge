@@ -8,6 +8,7 @@ interface Question {
 
 interface QuizDocument extends Document {
   title: string
+  type: 'quiz' | 'assignment'
   course: string
   topic: string
   dueTo: Date
@@ -20,6 +21,10 @@ const quizSchema = new Schema<QuizDocument>({
     required: true,
   },
   course: {
+    type: String,
+    required: true,
+  },
+  type: {
     type: String,
     required: true,
   },

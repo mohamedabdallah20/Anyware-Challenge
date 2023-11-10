@@ -9,7 +9,7 @@ export default function AnnouncementCard(props: props) {
   return (
     <div className="grid grid-cols-2">
       <div>
-        <div className="place-self-center font-bold text-slate-600 text-xl pt-4 pl-28">
+        <div className="place-self-center font-bold text-slate-600 text-xl pt-4 md:pl-28 pl-16  ">
           <h6>{announcement.userName}</h6>
         </div>
         <div className="text-slate-600 text-lg pb-4 pl-28">

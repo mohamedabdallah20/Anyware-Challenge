@@ -18,7 +18,7 @@ function BurgerMenu() {
 
   return (
     <>
-      <div className="lg:w-96 bg-blue-500 lg:min-h-screen">
+      <div className="lg:w-96 bg-blue-400 lg:min-h-screen">
         <button onClick={toggleMenu} className="lg:hidden text-white p-4">
           <FaBars />
         </button>

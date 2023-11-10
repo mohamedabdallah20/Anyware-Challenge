@@ -1,5 +1,5 @@
 import React from 'react'
-import desktop from '../assets/images/pngwing.com.png'
+import desktop from '../assets/images/pngwing.com2.png'
 
 export default function ExamTime() {
   return (
@@ -17,7 +17,7 @@ export default function ExamTime() {
 
       <img
         src={desktop}
-        className="justify-self-end w-full h-auto sm:w-1/8 md:w-1/6 lg:w-1/2"
+        className="justify-self-end w-full h-auto lg:w-1/2"
         alt="desktop"
       />
     </div>
