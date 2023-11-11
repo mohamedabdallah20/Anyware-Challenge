@@ -4,7 +4,7 @@ const colors = require('colors')
 import connectDB from './config/db'
 import quizRouter from './routes/quizRoutes'
 import announcementRouter from './routes/announcementRoutes'
-import { Request, Response } from 'express'
+import { NextFunction, Request, Response } from 'express'
 const { errorHandler } = require('./middlewares/errorMiddleware')
 const cors = require('cors')
 
@@ -20,10 +20,20 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 // cors middleware
-const corsOptions = {
-  origin: '*',
-}
-app.use(cors(corsOptions))
+// const corsOptions = {
+//   origin: '*',
+// }
+// app.use(cors(corsOptions))
+
+app.use(function (req: Request, res: Response, next: NextFunction) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, DELETE, POST')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
+  next()
+})
 
 // welcome message
 app.get('/', (req: Request, res: Response) => {
