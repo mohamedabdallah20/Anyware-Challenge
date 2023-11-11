@@ -1,46 +1,107 @@
-# Getting Started with Create React App
+# Frontend Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The frontend of this application is built using React, with additional styling provided by the Tailwind CSS library and DaisyUI. Redux Toolkit and React-Redux are used for state management. Below is an overview of the key aspects of the frontend.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+The project follows a standard React project structure. Key directories and files include:
 
-### `npm start`
+- **`src/`**: Main source code directory.
+  - **`components/`**: Reusable React components.
+  - **`features/`**: Functionalities implemented as features.
+  - **`pages/`**: Main application pages.
+  - **`assets/`**: Static assets like images.
+  - **`app/`**: Redux or context API setup (if applicable).
+  - **`index.tsx`**: Entry point for the application.
+- **`public/`**: Public assets and HTML template.
+- **`package.json`**: Node.js package configuration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `AnnouncementCard`
 
-### `npm test`
+- Description: Renders an individual announcement.
+- Props:
+  - `announcement`: Data for the announcement.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Announcements`
 
-### `npm run build`
+- Description: Displays a list of announcements.
+- Uses: `AnnouncementCard` component.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `QuizCard`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Description: Renders an individual quiz.
+- Props:
+  - `quiz`: Data for the quiz.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Dashboard`
 
-### `npm run eject`
+- Description: Main dashboard page.
+- Uses: `Announcements` and `QuizCard` components.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `Login`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Description: Login page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `ExamTime`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Description: Exam time pane.
 
-## Learn More
+## State Management
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application uses Redux Toolkit and React-Redux for state management. Two reducers are employed:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **`announce` reducer**:
+  - **State**:
+    - `announcements`: Array of announcements.
+    - `isLoading`: Boolean indicating if data is being loaded.
+    - `isError`: Boolean indicating if an error occurred.
+    - `isSuccess`: Boolean indicating if the operation was successful.
+    - `message`: Additional information or error message.
+
+- **`quizzes` reducer**:
+  - **State**:
+    - `quizzes`: Array of quizzes.
+    - `isLoading`: Boolean indicating if data is being loaded.
+    - `isError`: Boolean indicating if an error occurred.
+    - `isSuccess`: Boolean indicating if the operation was successful.
+    - `message`: Additional information or error message.
+
+## Data Fetching
+
+Data is fetched from the backend API, which is hosted at [https://anyware-challenge-server.vercel.app/](https://anyware-challenge-server.vercel.app/).
+
+## Styling
+
+The styling of the application is done using the Tailwind CSS library with DaisyUI. The styling might be basic, and improvements can be made as needed.
+
+ps : I'm not quite good at colors choosing :grinning: 
+
+## Deployment
+
+The frontend is deployed on Vercel and can be accessed at [https://anyware-challenge.vercel.app/](https://anyware-challenge.vercel.app/).
+
+## Dependencies
+
+Key dependencies include:
+
+- `react`: JavaScript library for building user interfaces.
+- `tailwindcss`: A utility-first CSS framework.
+- `daisyui`: A UI component library for Tailwind CSS.
+- `@reduxjs/toolkit`: A set of tools for efficient Redux development.
+- `react-redux`: Official React bindings for Redux.
+
+## Scripts
+
+To run the project locally, use the following npm scripts:
+
+First of all run `npm install` to install all dependencies
+
+- **Start the project:** `npm start`
+- **Build the project:** `npm run build`
+- **Run tests:** `npm test`
+
+## Note
+
+Make sure your backend server is running at [https://anyware-challenge-server.vercel.app/](https://anyware-challenge-server.vercel.app/) for proper data fetching.
