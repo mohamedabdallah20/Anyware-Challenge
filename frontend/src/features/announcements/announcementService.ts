@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = '/api/announcements'
+const API_URL = 'https://anyware-challenge-server.vercel.app/api/announcements'
 
 // Fetch All Announcements
 const getAllAnnouncements = async () => {

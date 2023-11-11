@@ -4,6 +4,7 @@ const colors = require('colors')
 import connectDB from './config/db'
 import quizRouter from './routes/quizRoutes'
 import announcementRouter from './routes/announcementRoutes'
+import { Request, Response } from 'express'
 const { errorHandler } = require('./middlewares/errorMiddleware')
 const cors = require('cors')
 
@@ -20,9 +21,14 @@ app.use(express.urlencoded({ extended: false }))
 
 // cors middleware
 const corsOptions = {
-  origin: 'https://anyware-challenge.vercel.app', // frontend URI (ReactJS)
+  origin: 'https://anyware-challenge.vercel.app',
 }
 app.use(cors(corsOptions))
+
+// welcome message
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello from anyware challenge!')
+})
 
 // Quiz Routes
 app.use('/api/quizzes', quizRouter)

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = '/api/quizzes'
+const API_URL = 'https://anyware-challenge-server.vercel.app/api/quizzes'
 
 // Fetch All quizzes
 const getAllQuizzes = async () => {

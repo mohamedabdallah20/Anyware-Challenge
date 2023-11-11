@@ -21,9 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // cors middleware
 const corsOptions = {
-    origin: 'https://anyware-challenge.vercel.app', // frontend URI (ReactJS)
+    origin: 'https://anyware-challenge.vercel.app',
 };
 app.use(cors(corsOptions));
+// welcome message
+app.get('/', (req, res) => {
+    res.send('Hello from anyware challenge!');
+});
 // Quiz Routes
 app.use('/api/quizzes', quizRoutes_1.default);
 // Announcement Routes
