@@ -26,7 +26,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 // welcome message
 app.get('/', (req, res) => {
-    res.send('Hello from anyware challenge!');
+    return res.send('Hello from anyware challenge!');
 });
 // Quiz Routes
 app.use('/api/quizzes', quizRoutes_1.default);

@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 
 function Announcements(props: announcementsPropsType) {
   const { announcements, isError, isLoading, message } = props.data
-  let threeAnnouncements: announcementType[] = []
+  // let threeAnnouncements: announcementType[] = []
 
-  if (announcements.length > 3) {
-    threeAnnouncements = announcements.slice(0, 3)
-  } else {
-    threeAnnouncements = announcements
-  }
+  // if (announcements.length > 3) {
+  //   threeAnnouncements = announcements.slice(0, 3)
+  // } else {
+  //   threeAnnouncements = announcements.copyWithin(0)
+  // }
   if (isError) {
     return <div>{message}</div>
   }
@@ -30,7 +30,7 @@ function Announcements(props: announcementsPropsType) {
           </Link>
         </div>
       </div>
-      {threeAnnouncements.map((announcement: announcementType) => (
+      {announcements.map((announcement: announcementType) => (
         <AnnouncementCard key={announcement._id.toString()}>
           {announcement}
         </AnnouncementCard>
