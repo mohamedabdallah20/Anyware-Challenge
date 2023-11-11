@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 
 // cors middleware
 const corsOptions = {
-  origin: 'https://anyware-challenge.vercel.app',
+  origin: '*',
 }
 app.use(cors(corsOptions))
 
