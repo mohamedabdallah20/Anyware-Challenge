@@ -4,10 +4,19 @@
   "description": "Challenge for Anyware software Full stack position",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node backend/server.ts",
+    "start": "ts-node src/server.ts",
     "server": "nodemon",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
+    "pre-commit": "npm run ts.check && npm run build&& npm run add-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
   "author": "Mohammed Abdalllah mohammed.a.elsaied@gmail.com",
   "license": "MIT",
   "dependencies": {
@@ -21,6 +30,8 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/mongoose": "^5.11.97",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1"
   }
 }

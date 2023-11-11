@@ -1,0 +1,76 @@
+- .gitignore
+- .project_structure_ignore
+- backend
+  - .env
+  - nodemon.json
+  - package-lock.json
+  - package.json
+  - src
+    - config
+      - db.ts
+    - controller
+      - announcementController.ts
+      - quizController.ts
+    - middlewares
+      - errorMiddleware.ts
+    - models
+      - announcementModel.ts
+      - quizModel.ts
+      - userModel.ts
+    - routes
+      - announcementRoutes.ts
+      - quizRoutes.ts
+    - server.ts
+- frontend
+  - .gitignore
+  - README.md
+  - package-lock.json
+  - package.json
+  - public
+    - favicon.ico
+    - index.html
+    - logo192.png
+    - logo512.png
+    - manifest.json
+    - robots.txt
+  - src
+    - App.css
+    - App.test.tsx
+    - App.tsx
+    - app
+      - store.ts
+    - assets
+      - images
+        - pngwing.com.png
+        - pngwing.com.png~
+        - pngwing.com2.png
+        - pngwing.com2.png~
+    - components
+      - AnnouncementCard.tsx
+      - Announcements.tsx
+      - BurgerMenu.tsx
+      - DueTo.tsx
+      - ExamTime.tsx
+      - Header.tsx
+      - QuizCard.tsx
+    - features
+      - announcements
+        - announceSlice.ts
+        - announcementService.ts
+      - quizzes
+        - quizzesService.ts
+        - quizzesSlice.ts
+    - hoc
+      - requireAuth.tsx
+    - index.css
+    - index.tsx
+    - pages
+      - Dashboard.tsx
+      - Login.tsx
+    - react-app-env.d.ts
+    - reportWebVitals.ts
+    - setupTests.ts
+    - types.d.ts
+  - tailwind.config.js
+- project_structure.txt
+- tsconfig.json
